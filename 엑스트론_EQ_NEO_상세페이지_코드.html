@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -11,112 +11,11 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-    <!-- Paperlogy Web Font -->
-    <style>
-        @font-face {
-            font-family: 'Paperlogy';
-            font-weight: 100;
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'Paperlogy';
-            font-weight: 300;
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'Paperlogy';
-            font-weight: 400;
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
-        }
-        /* ✅ Medium(500) 굵기 추가 */
-        @font-face {
-            font-family: 'Paperlogy';
-            font-weight: 500;
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'Paperlogy';
-            font-weight: 600;
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
-        }
-        /* ✅ Bold(700) 굵기 추가 */
-        @font-face {
-            font-family: 'Paperlogy';
-            font-weight: 700;
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
-        }
-        @font-face {
-            font-family: 'Paperlogy';
-            font-weight: 800;
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
-        }
-        /* ✅ Black(900) 굵기 추가 */
-        @font-face {
-            font-family: 'Paperlogy';
-            font-weight: 900;
-            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
-        }
-
-        body {
-            /* Tailwind config에서 sans 기본값으로 적용하므로 여기서는 보조 역할만 합니다. */
-            word-break: keep-all; /* 한글 단어 끊김 방지 */
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* 시니어를 위한 가독성 중심 타이포그래피 클래스 */
-        .text-body {
-            font-size: 1.15rem; 
-            line-height: 1.7;
-            color: #334155;
-        }
-
-        .text-body-lg {
-            font-size: 1.3rem;
-            line-height: 1.7;
-            color: #1E293B;
-        }
-
-        /* 부드러운 아코디언 애니메이션 */
-        .accordion-content {
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-        }
-        .accordion-content.active {
-            max-height: 500px;
-            opacity: 1;
-        }
-    </style>
+    <!-- Custom Styles (Paperlogy Font, Utils) -->
+    <link rel="stylesheet" href="css/style.css">
 
     <!-- Tailwind Custom Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    /* ✅ Tailwind 기본 폰트를 Paperlogy로 완전히 덮어씌움 */
-                    fontFamily: {
-                        sans: ['Paperlogy', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: '#1E3A8A', /* 딥 블루 (신뢰/안전) */
-                        secondary: '#166534', /* 포레스트 그린 (평온함) */
-                        bgWarm: '#FBF9F6', /* 웜 베이지 (눈부심 방지) */
-                        textDark: '#1E293B', /* 차콜 (가독성 극대화) */
-                    },
-                    animation: {
-                        'float': 'float 4s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-15px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="js/tailwind-config.js"></script>
 </head>
 <body class="bg-bgWarm text-textDark selection:bg-primary selection:text-white font-sans">
 
@@ -207,7 +106,7 @@
                 <!-- Image Placeholder -->
                 <div class="w-full mt-auto flex items-end justify-center relative z-10">
                     <!-- 여기에 블랙 색상 자전거 이미지 경로를 넣어주세요 -->
-                    <img src="https://k01038900526.cafe24.com/Detail_page_source/color_black_02.png" alt="XTRON 블랙 색상" class="w-full h-auto object-contain scale-105 origin-bottom" onerror="this.style.opacity='0'">
+                    <img src="https://k01038900526.cafe24.com/Detail_page_source/color_black_02.png" alt="XTRON 블랙 색상" class="w-full h-auto object-contain scale-105 origin-bottom" loading="lazy" onerror="this.style.opacity='0'">
                 </div>
             </div>
 
@@ -230,7 +129,7 @@
                 <!-- Image Placeholder -->
                 <div class="w-full mt-auto flex items-end justify-center relative z-10">
                     <!-- 여기에 베이지 색상 자전거 이미지 경로를 넣어주세요 -->
-                    <img src="https://k01038900526.cafe24.com/Detail_page_source/color_beige_02.png" alt="XTRON 베이지 색상" class="w-full h-auto object-contain scale-105 origin-bottom" onerror="this.style.opacity='0'">
+                    <img src="https://k01038900526.cafe24.com/Detail_page_source/color_beige_02.png" alt="XTRON 베이지 색상" class="w-full h-auto object-contain scale-105 origin-bottom" loading="lazy" onerror="this.style.opacity='0'">
                 </div>
             </div>
 
@@ -251,7 +150,7 @@
                     
                     <!-- 추가된 GIF 영역 1: 일반 삼륜자전거 -->
                     <div class="aspect-video bg-stone-100 rounded-xl mb-6 flex items-center justify-center p-4 text-center border border-stone-200 relative overflow-hidden">
-                        <img src="https://k01038900526.cafe24.com/Detail_page_source/vs_01.png" alt="일반 삼륜자전거 코너링" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+                        <img src="https://k01038900526.cafe24.com/Detail_page_source/vs_01.png" alt="일반 삼륜자전거 코너링" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
                         <span class="text-sm text-stone-500 relative z-0">삼륜 자전거 뒤에서 우측 45도 측면<br>(한쪽 바퀴가 들린 GIF 이미지 영역)</span>
                     </div>
                     
@@ -264,13 +163,13 @@
                     
                     <!-- 추가된 GIF 영역 2: XTRON -->
                     <div class="aspect-video bg-white rounded-xl mb-6 flex items-center justify-center p-4 text-center border border-primary/10 shadow-sm relative overflow-hidden">
-                        <img src="https://k01038900526.cafe24.com/Detail_page_source/vs_02.png" alt="XTRON 코너링" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+                        <img src="https://k01038900526.cafe24.com/Detail_page_source/vs_02.png" alt="XTRON 코너링" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
                         <span class="text-sm text-primary/70 relative z-0">삼륜 자전거 뒤에서 우측 45도 측면<br>(뒷바퀴 두 개가 안전하게 회전하는 GIF 이미지 영역)</span>
                     </div>
                     
                     <i class="ph-fill ph-shield-check text-4xl text-primary mb-4 inline-block"></i>
                     <!-- ✅ 로고 이미지 크기 수정 (inline-block h-5 align-middle mr-0.5 -mt-1) -->
-                    <h3 class="text-xl font-bold mb-3 text-primary"><img src="https://k01038900526.cafe24.com/Detail_page_source/XTRON_logo_B.png" alt="XTRON" class="inline-block h-5 align-middle mr-0.5 -mt-1" onerror="this.style.opacity='0'">의 약속</h3>
+                    <h3 class="text-xl font-bold mb-3 text-primary"><img src="https://k01038900526.cafe24.com/Detail_page_source/XTRON_logo_B.png" alt="XTRON" class="inline-block h-5 align-middle mr-0.5 -mt-1" loading="lazy" onerror="this.style.opacity='0'">의 약속</h3>
                     <p class="text-body text-slate-600">위험과 타협하지 않은 안전 설계.<br>어떤 코너에서도 노면에 밀착됩니다.</p>
                 </div>
             </div>
@@ -279,7 +178,7 @@
                 <p class="text-body-lg text-slate-700">
                     근력이 예전 같지 않아서, 무릎 관절이 시려서 이륜자전거 타기를 포기하셨나요? 스스로 중심을 잡아주는 삼륜자전거는 훌륭한 대안입니다.<br><br>
                     <strong>하지만 주의하세요.</strong> <br>일반적인 저가형 삼륜자전거는 양쪽 뒷바퀴가 하나의 쇠막대(고정축)로 강하게 묶여 있어, 한쪽 바퀴가 붕 뜨는 치명적인 불안정을 초래합니다. 노년층에게 자전거 '전복(넘어짐)' 사고는 일상을 무너뜨릴 수 있는 치명적인 위험입니다. <br>
-                    <img src="https://k01038900526.cafe24.com/Detail_page_source/XTRON_LOGO_small.png" alt="XTRON" class="inline-block h-6 align-middle mx-1 -mt-1" onerror="this.style.opacity='0'">은 보이지 않는 위험과 절대 타협하지 않았습니다.
+                    <img src="https://k01038900526.cafe24.com/Detail_page_source/XTRON_LOGO_small.png" alt="XTRON" class="inline-block h-6 align-middle mx-1 -mt-1" loading="lazy" onerror="this.style.opacity='0'">은 보이지 않는 위험과 절대 타협하지 않았습니다.
                     
                 </p>
             </div>
@@ -301,7 +200,7 @@
                 <!-- ✅ GIF 애니메이션 영역 (세로로 길게 변경) -->
                 <div class="w-full lg:w-2/5 max-w-sm mx-auto bg-slate-800 rounded-3xl aspect-[3/4] md:aspect-[9/16] flex items-center justify-center border border-slate-700 p-6 relative overflow-hidden shadow-2xl">
                     <!-- 여기에 세로형 GIF 이미지 경로를 넣어주세요 -->
-                    <img src="https://k01038900526.cafe24.com/Detail_page_source/gear_gif.gif" alt="디퍼런셜 기어 동작 원리" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+                    <img src="https://k01038900526.cafe24.com/Detail_page_source/gear_gif.gif" alt="디퍼런셜 기어 동작 원리" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
                     
                     <div class="text-center text-slate-400 z-0">
                         <i class="ph ph-gif text-5xl mb-3 mx-auto"></i>
@@ -360,7 +259,7 @@
                         <!-- ✅ 프레임 이미지 삽입 영역 -->
                         <div class="w-full md:w-1/2 aspect-video bg-white rounded-2xl flex items-center justify-center text-center border border-stone-200 shadow-sm overflow-hidden relative">
                             <!-- 여기에 이미지 경로를 넣어주세요 -->
-                            <img src="https://k01038900526.cafe24.com/Detail_page_source/frame.png" alt="저상형 스완 프레임" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+                            <img src="https://k01038900526.cafe24.com/Detail_page_source/frame.png" alt="저상형 스완 프레임" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
                             
                             <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-stone-400 z-0">
                                 <i class="ph ph-image text-4xl mb-2 mx-auto"></i>
@@ -381,7 +280,7 @@
                             <!-- ✅ 브레이크/파킹 시스템 이미지 삽입 영역 -->
                             <div class="w-full md:w-1/2 aspect-video md:aspect-[4/3] bg-white rounded-2xl flex items-center justify-center text-center border border-stone-200 shadow-sm overflow-hidden relative mt-auto">
                                 <!-- 여기에 이미지 경로를 넣어주세요 -->
-                                <img src="https://k01038900526.cafe24.com/Detail_page_source/NEO_brake_06.gif" alt="브레이크 및 파킹 시스템" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+                                <img src="https://k01038900526.cafe24.com/Detail_page_source/NEO_brake_06.gif" alt="브레이크 및 파킹 시스템" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
                             </div>
                         </div>
 
@@ -412,7 +311,7 @@
                     <!-- ✅ 하단 GIF 이미지 영역 (잠금 해제 방법 상자와 겹치지 않게 공백 mt-6 추가) -->
                     <div class="mt-6 mx-auto w-full max-w-[800px] h-[520px] bg-[#f7f7f7] shadow-sm flex items-center justify-center relative overflow-hidden border border-stone-200">
                         <!-- 여기에 브레이크 작동 GIF 경로를 넣어주세요 -->
-                        <img src="https://k01038900526.cafe24.com/Detail_page_source/brake_02.gif" alt="브레이크 작동 GIF" class="absolute inset-0 w-full h-full object-contain z-10" onerror="this.style.opacity='0'">
+                        <img src="https://k01038900526.cafe24.com/Detail_page_source/brake_02.gif" alt="브레이크 작동 GIF" class="absolute inset-0 w-full h-full object-contain z-10" loading="lazy" onerror="this.style.opacity='0'">
                         <div class="z-0 text-center">
                             <strong class="text-[#c026d3] text-5xl tracking-widest italic font-black drop-shadow-[0_0_8px_rgba(192,38,211,0.5)]">gif</strong>
                             <p class="text-stone-500 text-sm mt-2">브레이크 작동 GIF 이미지 영역</p>
@@ -445,7 +344,7 @@
                     <div class="w-full md:w-1/2">
                         <div class="aspect-[4/3] bg-stone-100 rounded-3xl flex items-center justify-center text-center border border-stone-200 overflow-hidden relative">
                             <!-- ✅ 모터/페달링 이미지 삽입 영역 -->
-                            <img src="https://k01038900526.cafe24.com/Detail_page_source/motor.gif" alt="컨트롤러 및 페달링 모습" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+                            <img src="https://k01038900526.cafe24.com/Detail_page_source/motor.gif" alt="컨트롤러 및 페달링 모습" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
                             
                             <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-stone-400 z-0">
                                 <i class="ph ph-image text-5xl mb-3 mx-auto"></i>
@@ -473,7 +372,7 @@
                         
                         <!-- 좌측: GIF 이미지 영역 -->
                         <div class="w-full md:w-1/2 flex items-center justify-center relative">
-                            <img src="https://k01038900526.cafe24.com/Detail_page_source/display_pas_02.gif" alt="속도 제어 시연" class="w-3/4 md:w-4/5 lg:w-3/4 h-auto object-contain drop-shadow-md" onerror="this.style.opacity='0'">
+                            <img src="https://k01038900526.cafe24.com/Detail_page_source/display_pas_02.gif" alt="속도 제어 시연" class="w-3/4 md:w-4/5 lg:w-3/4 h-auto object-contain drop-shadow-md" loading="lazy" onerror="this.style.opacity='0'">
                         </div>
 
                         <!-- 우측: 5단계 속도 세분화 애니메이션 바(Bar) 그래프 -->
@@ -571,7 +470,7 @@
                     <div class="w-full md:w-1/2">
                         <div class="aspect-[21/9] md:aspect-video bg-white rounded-2xl flex items-center justify-center text-center border border-stone-200 shadow-sm overflow-hidden relative">
                             <!-- ✅ 대용량 바구니 이미지 삽입 영역 -->
-                            <img src="https://k01038900526.cafe24.com/Detail_page_source/back.png" alt="대용량 적재 바구니" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">                            
+                            <img src="https://k01038900526.cafe24.com/Detail_page_source/back.png" alt="대용량 적재 바구니" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">                            
                         </div>
                     </div>
                 </div>
@@ -605,7 +504,7 @@
                             <span class="text-slate-400 text-sm md:text-base font-semibold tracking-wider flex items-center gap-2">
                                 Powered by. 
                                 <!-- ✅ 삼성 SDI 로고 이미지 영역 (크기 확대) -->
-                                <img src="https://k01038900526.cafe24.com/Detail_page_source/samsung_SDI_logo.png" alt="SAMSUNG SDI" class="h-5 md:h-7 object-contain inline-block" onerror="this.style.opacity='0'">
+                                <img src="https://k01038900526.cafe24.com/Detail_page_source/samsung_SDI_logo.png" alt="SAMSUNG SDI" class="h-5 md:h-7 object-contain inline-block" loading="lazy" onerror="this.style.opacity='0'">
                             </span>
                             <h3 class="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter mt-1">48V 20Ah</h3>
                         </div>
@@ -638,12 +537,12 @@
                             <span class="text-slate-400 text-sm md:text-base font-semibold tracking-wider flex items-center gap-2">
                                 Powered by. 
                                 <!-- ✅ LG 에너지솔루션 로고 이미지 영역 (크기 확대) -->
-                                <img src="https://k01038900526.cafe24.com/Detail_page_source/LG_logo.png" alt="LG Energy Solution" class="h-5 md:h-7 object-contain inline-block" onerror="this.style.opacity='0'">
+                                <img src="https://k01038900526.cafe24.com/Detail_page_source/LG_logo.png" alt="LG Energy Solution" class="h-5 md:h-7 object-contain inline-block" loading="lazy" onerror="this.style.opacity='0'">
                             </span>
                             <!-- ✅ MEGA 텍스트를 이미지 태그로 변경 및 정렬 속성 변경 -->
                             <h3 class="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter mt-1 flex items-center gap-3">
                                 48V 28.5Ah 
-                                <img src="https://k01038900526.cafe24.com/Detail_page_source/MEGA_logo.png" alt="MEGA" class="h-[1em] object-contain inline-block" onerror="this.style.opacity='0'">
+                                <img src="https://k01038900526.cafe24.com/Detail_page_source/MEGA_logo.png" alt="MEGA" class="h-[1em] object-contain inline-block" loading="lazy" onerror="this.style.opacity='0'">
                             </h3>
                         </div>
                         <div class="text-left md:text-right mt-8 md:mt-0">
@@ -694,7 +593,7 @@
                 <div class="w-full md:w-1/2 flex justify-center md:justify-end px-4 md:px-0">
                     <div class="w-full max-w-[600px] aspect-[3/2] bg-stone-100 rounded-3xl flex items-center justify-center text-center border border-stone-200 overflow-hidden relative shadow-xl">
                         <!-- ✅ 배터리 탈부착 GIF 삽입 영역 -->
-                        <img src="https://k01038900526.cafe24.com/Detail_page_source/battery_detail_02.gif" alt="배터리 탈부착 시연" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+                        <img src="https://k01038900526.cafe24.com/Detail_page_source/battery_detail_02.gif" alt="배터리 탈부착 시연" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
                         
                         <div class="absolute inset-0 flex flex-col items-center justify-center p-4 text-stone-400 z-0">
                             <i class="ph ph-gif text-5xl mb-3 mx-auto"></i>
@@ -731,7 +630,7 @@
             <!-- ✅ 계기판 이미지 (단일 PNG 파일 적용) -->
             <div class="w-full py-12 md:py-16 flex items-center justify-center relative">
                 <!-- 여기에 첨부하신 계기판 전체 설명 이미지 경로를 넣어주세요 -->
-                <img src="https://k01038900526.cafe24.com/Detail_page_source/display_detail_02.png" alt="계기판 기능 상세 설명" class="w-full max-w-5xl h-auto object-contain relative z-20 drop-shadow-2xl" onerror="this.style.opacity='0'">
+                <img src="https://k01038900526.cafe24.com/Detail_page_source/display_detail_02.png" alt="계기판 기능 상세 설명" class="w-full max-w-5xl h-auto object-contain relative z-20 drop-shadow-2xl" loading="lazy" onerror="this.style.opacity='0'">
                 
                 <!-- 플레이스홀더 (이미지 넣기 전 표시) -->
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-600 z-0 pointer-events-none">
@@ -782,7 +681,7 @@
                 <div class="detail-item opacity-0 translate-y-8 transition-all duration-700 ease-out bg-bgWarm rounded-3xl p-6 md:p-8 border border-stone-200 flex flex-col">
                     <div class="aspect-video bg-stone-200 rounded-2xl mb-6 flex items-center justify-center text-stone-400 overflow-hidden relative group">
                         <!-- ✅ 이미지 태그 삽입 -->
-                        <img src="https://k01038900526.cafe24.com/Detail_page_source/EB-BUS_cable.png" alt="커넥터 분리" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+                        <img src="https://k01038900526.cafe24.com/Detail_page_source/EB-BUS_cable.png" alt="커넥터 분리" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
                         <i class="ph ph-plugs text-5xl z-0"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-3 text-textDark">커넥터 분리형 EB-BUS</h3>
@@ -793,7 +692,7 @@
                 <div class="detail-item opacity-0 translate-y-8 transition-all duration-700 ease-out bg-bgWarm rounded-3xl p-6 md:p-8 border border-stone-200 flex flex-col">
                     <div class="aspect-video bg-stone-200 rounded-2xl mb-6 flex items-center justify-center text-stone-400 overflow-hidden relative group">
                         <!-- ✅ 이미지 태그 삽입 -->
-                        <img src="https://k01038900526.cafe24.com/Detail_page_source/tire.png" alt="펑크 방지 타이어" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+                        <img src="https://k01038900526.cafe24.com/Detail_page_source/tire.png" alt="펑크 방지 타이어" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
                         <i class="ph ph-circle-dashed text-5xl z-0"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-3 text-textDark">펑크 방지 레이어 삽입 타이어</h3>
@@ -804,7 +703,7 @@
                 <div class="detail-item opacity-0 translate-y-8 transition-all duration-700 ease-out bg-bgWarm rounded-3xl p-6 md:p-8 border border-stone-200 flex flex-col">
                     <div class="aspect-video bg-stone-200 rounded-2xl mb-6 flex items-center justify-center text-stone-400 overflow-hidden relative group">
                         <!-- ✅ 이미지 태그 삽입 -->
-                        <img src="https://k01038900526.cafe24.com/Detail_page_source/wheel.png" alt="마그네슘 휠" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+                        <img src="https://k01038900526.cafe24.com/Detail_page_source/wheel.png" alt="마그네슘 휠" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
                         <i class="ph ph-aperture text-5xl z-0"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-3 text-textDark">고강도 마그네슘 합금 휠</h3>
@@ -815,7 +714,7 @@
                 <div class="detail-item opacity-0 translate-y-8 transition-all duration-700 ease-out bg-bgWarm rounded-3xl p-6 md:p-8 border border-stone-200 flex flex-col">
                     <div class="aspect-video bg-stone-200 rounded-2xl mb-6 flex items-center justify-center text-stone-400 overflow-hidden relative group">
                         <!-- ✅ 이미지 태그 삽입 -->
-                        <img src="https://k01038900526.cafe24.com/Detail_page_source/suspension.png" alt="프론트 서스펜션" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+                        <img src="https://k01038900526.cafe24.com/Detail_page_source/suspension.png" alt="프론트 서스펜션" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
                         <i class="ph ph-waves text-5xl z-0"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-3 text-textDark">프론트 서스펜션</h3>
@@ -845,7 +744,7 @@
                 <!-- 상단: 메인 라이트 이미지 (독립된 상자) -->
                 <div class="w-full aspect-[4/3] md:aspect-[16/9] bg-black rounded-xl overflow-hidden relative shadow-2xl border border-slate-800">
                     <!-- ✅ 메인 라이트 배경 이미지 삽입 영역 -->
-                    <img src="https://k01038900526.cafe24.com/Detail_page_source/front_light.gif" alt="LED 헤드라이트 점등" class="absolute inset-0 w-full h-full object-cover object-top z-10" onerror="this.style.opacity='0'">
+                    <img src="https://k01038900526.cafe24.com/Detail_page_source/front_light.gif" alt="LED 헤드라이트 점등" class="absolute inset-0 w-full h-full object-cover object-top z-10" loading="lazy" onerror="this.style.opacity='0'">
                     
                     <div class="absolute inset-0 flex flex-col items-center justify-center text-slate-500 z-0">
                         <i class="ph-fill ph-headlights text-8xl mb-4 opacity-20 mx-auto"></i>
@@ -869,7 +768,7 @@
                         <div class="w-full md:w-1/2 flex justify-center md:justify-start">
                             <div class="w-64 h-48 bg-white rounded-xl flex items-center justify-center overflow-hidden relative shadow-lg border border-slate-200">
                                 <!-- ✅ 각도 조절 이미지 삽입 영역 (패딩 제거 및 박스 꽉 차게 수정) -->
-                                <img src="https://k01038900526.cafe24.com/Detail_page_source/light_03.png" alt="각도 조절 안내" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+                                <img src="https://k01038900526.cafe24.com/Detail_page_source/light_03.png" alt="각도 조절 안내" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
                             </div>
                         </div>
                     </div>
@@ -889,7 +788,7 @@
                         <div class="w-full md:w-1/2 flex justify-center md:justify-end">
                             <div class="w-64 h-48 bg-white rounded-xl flex items-center justify-center overflow-hidden relative shadow-lg border border-slate-200">
                                 <!-- ✅ 후미등 이미지 삽입 영역 (패딩 제거 및 박스 꽉 차게 수정) -->
-                                <img src="https://k01038900526.cafe24.com/Detail_page_source/light_detail_02.gif" alt="후미등 점등" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+                                <img src="https://k01038900526.cafe24.com/Detail_page_source/light_detail_02.gif" alt="후미등 점등" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
                             </div>
                         </div>
                     </div>
@@ -910,7 +809,7 @@
             <!-- 메인 이미지 영역 -->
             <div class="w-full aspect-[16/9] md:aspect-[21/9] bg-slate-800 rounded-3xl shadow-md overflow-hidden relative flex items-center justify-center border border-stone-200 mb-10 reveal-target opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out">
                 <!-- ✅ BMS 메인 이미지 삽입 영역 -->
-                <img src="https://k01038900526.cafe24.com/Detail_page_source/smart_BMS.png" alt="스마트 BMS 칩셋" class="absolute inset-0 w-full h-full object-cover z-20" onerror="this.style.opacity='0'">
+                <img src="https://k01038900526.cafe24.com/Detail_page_source/smart_BMS.png" alt="스마트 BMS 칩셋" class="absolute inset-0 w-full h-full object-cover z-20" loading="lazy" onerror="this.style.opacity='0'">
                 
                 <div class="text-center text-slate-400 relative z-0">
                     <i class="ph ph-cpu text-6xl mb-3 mx-auto"></i>
@@ -962,7 +861,7 @@
         <div class="max-w-3xl mx-auto reveal-target opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out">
             <div class="text-center mb-16">
                 <i class="ph-fill ph-question text-5xl text-primary mb-4"></i>
-                <h2 class="text-3xl font-bold text-textDark"><img src="https://k01038900526.cafe24.com/Detail_page_source/XTRON_EQ_NEO_logo_B.png" alt="XTRON EQ NEO" class="inline-block h-5 md:h-6 align-middle mr-1 -mt-1" onerror="this.style.opacity='0'"><br>자주 묻는 질문 (FAQ)</h2>
+                <h2 class="text-3xl font-bold text-textDark"><img src="https://k01038900526.cafe24.com/Detail_page_source/XTRON_EQ_NEO_logo_B.png" alt="XTRON EQ NEO" class="inline-block h-5 md:h-6 align-middle mr-1 -mt-1" loading="lazy" onerror="this.style.opacity='0'"><br>자주 묻는 질문 (FAQ)</h2>
                 <p class="text-body text-slate-600 mt-4">
                     시니어 라이더와 보호자의 걱정을 덜어드립니다.
                 </p>
@@ -1098,7 +997,7 @@
         <!-- 제품 스펙 이미지 -->
         <div class="relative w-full max-w-[860px] aspect-[860/4000] bg-stone-100 border border-stone-200 reveal-target opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out">
             <!-- ✅ 제품 스펙 이미지 삽입 영역 -->
-            <img src="https://k01038900526.cafe24.com/Detail_page_source/size_spec_02.png" alt="제품 스펙 및 상세정보" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+            <img src="https://k01038900526.cafe24.com/Detail_page_source/size_spec_02.png" alt="제품 스펙 및 상세정보" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
             
             <!-- 플레이스홀더 텍스트 -->
             <div class="absolute inset-0 flex flex-col items-center justify-center text-stone-400 z-0">
@@ -1111,7 +1010,7 @@
         <!-- NEW A/S 및 품질 보증 이미지 -->
         <div class="relative w-full max-w-[860px] aspect-[860/1611] bg-stone-100 border-x border-b border-stone-200 reveal-target opacity-0 translate-y-12 transition-all duration-[1200ms] ease-out">
             <!-- ✅ A/S 및 품질 보증 이미지 삽입 영역 -->
-            <img src="https://k01038900526.cafe24.com/Detail_page_source/260115_as_outro.png" alt="A/S 및 품질 보증" class="absolute inset-0 w-full h-full object-cover z-10" onerror="this.style.opacity='0'">
+            <img src="https://k01038900526.cafe24.com/Detail_page_source/260115_as_outro.png" alt="A/S 및 품질 보증" class="absolute inset-0 w-full h-full object-cover z-10" loading="lazy" onerror="this.style.opacity='0'">
             
             <!-- 플레이스홀더 텍스트 -->
             <div class="absolute inset-0 flex flex-col items-center justify-center text-stone-400 z-0">
@@ -1145,178 +1044,7 @@
         </div>
     </div>
 
-    <!-- JS for Accordion and Scroll Animations -->
-    <script>
-        // ✅ 색상 확대 모달 열기/닫기 로직
-        window.openColorModal = function(imgSrc, title, subtitle) {
-            const modal = document.getElementById('colorModal');
-            const modalImg = document.getElementById('colorModalImg');
-            const modalTitle = document.getElementById('colorModalTitle');
-            const modalSubtitle = document.getElementById('colorModalSubtitle');
-            const modalLine = document.getElementById('colorModalLine');
-            
-            // 데이터 설정
-            modalImg.src = imgSrc;
-            modalTitle.innerText = title;
-            modalSubtitle.innerText = subtitle;
-            
-            // 색상별 띠(Line) 디자인 분기
-            if (title === 'BEIGE') {
-                modalLine.className = 'w-10 h-2 bg-[#d2c9b8] border border-stone-300 mb-3';
-            } else {
-                modalLine.className = 'w-10 h-2 bg-slate-900 mb-3';
-            }
-            
-            // 애니메이션 클래스 제어
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-            setTimeout(() => {
-                document.getElementById('colorModalBox').classList.remove('scale-95', 'opacity-0');
-                document.getElementById('colorModalBox').classList.add('scale-100', 'opacity-100');
-            }, 10); // 약간의 지연 후 스케일 애니메이션 실행
-            
-            // 모달 열릴 때 배경 스크롤 방지
-            document.body.style.overflow = 'hidden';
-        };
-
-        window.closeColorModal = function() {
-            const modal = document.getElementById('colorModal');
-            const modalBox = document.getElementById('colorModalBox');
-            
-            // 애니메이션 역재생
-            modalBox.classList.remove('scale-100', 'opacity-100');
-            modalBox.classList.add('scale-95', 'opacity-0');
-            
-            setTimeout(() => {
-                modal.classList.add('opacity-0', 'pointer-events-none');
-                document.body.style.overflow = ''; // 배경 스크롤 복구
-            }, 300); // 0.3초 애니메이션 종료 후 완전히 숨김
-        };
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // ✅ 모든 주요 섹션 스크롤 애니메이션 (Reveal)
-            const revealTargets = document.querySelectorAll('.reveal-target');
-            if (revealTargets.length > 0) {
-                const revealObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.remove('opacity-0', 'translate-y-12');
-                            entry.target.classList.add('opacity-100', 'translate-y-0');
-                            // 한 번 나타나면 다시 숨기지 않음
-                            revealObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 }); // 화면에 10% 이상 보일 때 트리거
-
-                revealTargets.forEach(target => revealObserver.observe(target));
-            }
-
-            // FAQ 아코디언 로직
-            const faqBtns = document.querySelectorAll('.faq-btn');
-
-            faqBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const content = this.nextElementSibling;
-                    const icon = this.querySelector('i');
-                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-
-                    // Close all others
-                    document.querySelectorAll('.accordion-content').forEach(el => {
-                        el.classList.remove('active');
-                    });
-                    document.querySelectorAll('.faq-btn').forEach(el => {
-                        el.setAttribute('aria-expanded', 'false');
-                        el.querySelector('i').style.transform = 'rotate(0deg)';
-                    });
-
-                    // Toggle current
-                    if (!isExpanded) {
-                        this.setAttribute('aria-expanded', 'true');
-                        content.classList.add('active');
-                        icon.style.transform = 'rotate(180deg)';
-                    }
-                });
-            });
-
-            // ✅ 5단 속도 제어 바(Bar) 그래프 스크롤 애니메이션 로직
-            const speedContainer = document.getElementById('speed-bar-container');
-            const speedBars = document.querySelectorAll('.speed-bar');
-            
-            if (speedContainer && speedBars.length > 0) {
-                const speedObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            speedBars.forEach((bar, index) => {
-                                setTimeout(() => {
-                                    bar.style.width = bar.getAttribute('data-width');
-                                }, index * 150);
-                            });
-                            speedObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.4 });
-
-                speedObserver.observe(speedContainer);
-            }
-
-            // ✅ 배터리 바(Bar) 그래프 스크롤 애니메이션 로직
-            const batteryContainer = document.getElementById('battery-bar-container');
-            const batteryBars = document.querySelectorAll('.battery-bar');
-            
-            if (batteryContainer && batteryBars.length > 0) {
-                const batteryObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            batteryBars.forEach((bar, index) => {
-                                setTimeout(() => {
-                                    bar.style.width = bar.getAttribute('data-width');
-                                }, index * 200);
-                            });
-                            batteryObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.3 });
-
-                batteryObserver.observe(batteryContainer);
-            }
-
-            // ✅ 스마트 BMS 내장 스크롤 애니메이션 로직 (아이템 순차적 등장)
-            const bmsContainer = document.getElementById('bms-list-container');
-            const bmsItems = document.querySelectorAll('.bms-item');
-            
-            if (bmsContainer && bmsItems.length > 0) {
-                const bmsObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            bmsItems.forEach((item, index) => {
-                                setTimeout(() => {
-                                    item.classList.remove('opacity-0', 'translate-y-8');
-                                    item.classList.add('opacity-100', 'translate-y-0');
-                                }, index * 200); // 0.2초 간격으로 하나씩 올라오며 나타남
-                            });
-                            bmsObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.2 });
-
-                bmsObserver.observe(bmsContainer);
-            }
-
-            // ✅ 완벽을 위한 디테일(섹션 8) 스크롤 애니메이션 로직 (아이템 개별 등장)
-            const detailItems = document.querySelectorAll('.detail-item');
-            if (detailItems.length > 0) {
-                const detailObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.remove('opacity-0', 'translate-y-8');
-                            entry.target.classList.add('opacity-100', 'translate-y-0');
-                            detailObserver.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.15 });
-
-                detailItems.forEach(item => detailObserver.observe(item));
-            }
-        });
-    </script>
+    <!-- External JS Application Logic -->
+    <script src="js/app.js"></script>
 </body>
 </html>
